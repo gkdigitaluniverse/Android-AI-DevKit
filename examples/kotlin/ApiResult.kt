@@ -6,7 +6,7 @@
  */
 sealed interface ApiResult<out T> {
     data class Success<T>(val data: T) : ApiResult<T>
-    data object Empty : ApiResult<Nothing>
+    object Empty : ApiResult<Nothing>
     data class Failure(
         val kind: FailureKind,
         val userMessage: String
