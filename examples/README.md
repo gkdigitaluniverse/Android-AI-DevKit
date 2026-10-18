@@ -8,6 +8,10 @@ These examples are small reference snippets for AI-assisted Android development.
 - `kotlin/SafeRepositoryCall.kt` — maps expected network failures while preserving coroutine cancellation.
 - `compose/LoadableContent.kt` — renders loading, success, empty, and error states in Compose.
 - `testing/ApiResultTest.kt` — small unit tests for result-state mapping.
+- `kotlin/ScreenStateViewModel.kt` — generic repository-backed ViewModel exposing explicit loading/content/empty/error states.
+- `compose/ScreenStateContent.kt` — Compose renderer for those states with retry handling.
+- `java/RepositoryBoundary.java` — small Java repository boundary/result model.
+- `xml/accessible-form-example.xml` — accessible XML form layout starting point.
 
 ## How to apply safely
 
@@ -23,6 +27,10 @@ These examples are small reference snippets for AI-assisted Android development.
 - Do not catch `CancellationException` as an ordinary failure.
 - A successful response with no usable items should be represented as an empty state, not a generic error.
 - Avoid exposing raw exception messages or stack traces directly to end users.
+
+## Proven upstream examples
+
+Use [`../upstream-solutions/README.md`](../upstream-solutions/README.md) to jump to relevant files in Android Architecture Samples and Now in Android. Their full project files often depend on app-specific models, DI, libraries, and build setup, so adapt the pattern rather than pasting a whole file blindly.
 
 ## References
 
