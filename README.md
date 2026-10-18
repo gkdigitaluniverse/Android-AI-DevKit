@@ -21,6 +21,7 @@ Use these original checklists and templates to guide an AI coding assistant acro
 - [testing/](testing/) — build and verification checklist.
 - [templates/](templates/) — reusable AI coding task prompt.
 - [LICENSES-AND-ATTRIBUTION.md](LICENSES-AND-ATTRIBUTION.md) — third-party material policy.
+- [SOURCE_AUDIT.md](SOURCE_AUDIT.md) — file-by-file content provenance, source links, and direct-copy status.
 
 ## How to use
 
