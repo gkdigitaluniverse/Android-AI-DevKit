@@ -52,3 +52,8 @@ The new Java, Kotlin, Compose, and XML files in examples/ are original, compact 
 ## Dependency and setup guide
 
 See [DEPENDENCY_SETUP.md](DEPENDENCY_SETUP.md) for direct imports, target-project requirements, integration cautions, and what has or has not been verified. Exact dependency versions are intentionally not pinned until there is a consuming Android Gradle project to match.
+
+
+## Adapted component for app reuse
+
+- **ConfigurableVerticalGrid:** [adapted Kotlin source](adaptations/compose/ConfigurableVerticalGrid.kt) adds horizontal/vertical spacing and validates positive column count/non-negative spacing. The original, unmodified upstream file remains available at [Jetsnack/Grid.kt](compose-samples/Jetsnack/Grid.kt). See the [adaptation README](adaptations/compose/README.md) for differences and limitations. Neither file has been compiled in this repository.
