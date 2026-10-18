@@ -19,6 +19,7 @@ Use these original checklists and templates to guide an AI coding assistant acro
 - [security/](security/) — Android security checklist.
 - [accessibility/](accessibility/) — accessibility checks.
 - [testing/](testing/) — build and verification checklist.
+- [testing/api-verification-plan.md](testing/api-verification-plan.md) — API test matrix, execution order, and test-report template.
 - [templates/](templates/) — reusable AI coding task prompt.
 - [examples/](examples/) — practical Kotlin, Compose, and unit-test reference snippets.
 - [LICENSES-AND-ATTRIBUTION.md](LICENSES-AND-ATTRIBUTION.md) — third-party material policy.
