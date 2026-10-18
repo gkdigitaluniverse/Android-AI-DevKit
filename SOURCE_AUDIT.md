@@ -56,11 +56,11 @@ The public repository public-apis/public-apis is linked as a discovery directory
 ## Public repositories checked for direct file reuse
 
 - public-apis/public-apis: referenced as a place to discover API providers. Its README/list was not copied into the DevKit guides.
-- Android Architecture Samples and Now in Android were inspected for architecture, ViewModel, and test patterns. Their relevant files are linked in `upstream-solutions/README.md`; no upstream source file was copied into the DevKit in this pass.
+- Android Architecture Samples and Now in Android were inspected for architecture, ViewModel, and test patterns. `upstream-solutions/architecture-samples/TasksViewModel.kt` and `TasksViewModelTest.kt` are verbatim Apache-2.0 reference copies with original headers retained; the matching upstream `LICENSE` is included in that directory. Now in Android files remain linked references.
 
 This is a content-level audit of the repository files and their visible references, not a forensic proof of every drafting step. Because the previous batch did not save exact source snapshots, URLs, commit SHAs, or line ranges at the time each paragraph was drafted, it would be inaccurate to claim that a specific line came from a specific external file.
 
-The examples added on 2026-10-18 are original compact teaching implementations informed by the reviewed official samples, not verbatim copies. Exact inspected upstream file URLs and the checked Apache-2.0 licensing status are documented in `upstream-solutions/README.md`.
+The Java, Kotlin, Compose, and XML examples added on 2026-10-18 are original compact teaching implementations informed by the reviewed official samples. Two Android Architecture Samples files are included verbatim under `upstream-solutions/architecture-samples/` with original license headers and the full upstream Apache-2.0 LICENSE. Exact source URLs and the distinction between original examples and verbatim reference copies are documented in `upstream-solutions/README.md`.
 
 ## How to improve provenance for future additions
 
