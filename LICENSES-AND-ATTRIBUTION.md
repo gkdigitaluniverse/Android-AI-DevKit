@@ -28,3 +28,20 @@ References are not endorsements. Third-party names and trademarks belong to thei
 - Adds configurable horizontal/vertical spacing and validates columns/spacing inputs; original upstream file remains unchanged alongside it.
 - The adaptation includes its own copyright/license header and explicitly records the upstream source and adaptation.
 - Integration and verification notes: `upstream-solutions/adaptations/compose/README.md`.
+
+### Android Compose Samples — JetsnackSurface
+- Source file: `upstream-solutions/compose-samples/Jetsnack/JetsnackSurface.kt`
+- Upstream repository: https://github.com/android/compose-samples
+- Exact upstream revision: `5f2f2cf1fdfdb6472dd46deb8bcd35cbc9024632`
+- Exact upstream path: `Jetsnack/app/src/main/java/com/example/jetsnack/ui/components/Surface.kt`
+- License: Apache License 2.0; complete license retained at `upstream-solutions/compose-samples/LICENSE`.
+- Original copyright/license header preserved; no intentional source changes made during import.
+
+### Android Compose Samples — JetsnackButton
+- Source file: `upstream-solutions/compose-samples/Jetsnack/JetsnackButton.kt`
+- Upstream repository: https://github.com/android/compose-samples
+- Exact upstream revision: `5f2f2cf1fdfdb6472dd46deb8bcd35cbc9024632`
+- Exact upstream path: `Jetsnack/app/src/main/java/com/example/jetsnack/ui/components/Button.kt`
+- License: Apache License 2.0; complete license retained at `upstream-solutions/compose-samples/LICENSE`.
+- Original copyright/license header preserved; no intentional source changes made during import.
+- Both components' integration notes and design guidance: `upstream-solutions/UI_DESIGN_SOLUTIONS.md`.
