@@ -47,12 +47,20 @@ The public repository public-apis/public-apis is linked as a discovery directory
 | `examples/compose/LoadableContent.kt` | Compose renderer for loading/result states | Original illustrative snippet. Requires the target project to use compatible Compose and Material 3 dependencies. |
 | `examples/testing/ApiResultTest.kt` | Unit tests for result-state mapping | Original illustrative test snippet; it has not been compiled or run as part of an Android project in this repository. |
 
+| `examples/kotlin/ScreenStateViewModel.kt` | Generic ViewModel and repository-boundary screen state example | Original compact synthesis of common Android patterns; official source examples are linked in `upstream-solutions/README.md`. Not compiled in this repo. |
+| `examples/compose/ScreenStateContent.kt` | Compose renderer for loading, content, empty, and error states | Original compact example; requires compatible Compose and Material 3 dependencies in the target app. Not compiled in this repo. |
+| `examples/xml/accessible-form-example.xml` | XML Views form with label association, email autofill/input type, and minimum touch heights | Original example; sample string resources must be supplied by the target app. Not layout-inflated or accessibility-tested here. |
+| `examples/java/RepositoryBoundary.java` | Java repository boundary and explicit result category example | Original illustrative snippet. Not compiled in a target Android project. |
+| `upstream-solutions/README.md` | Map of official Android sample files for ViewModel, repository, Compose UI tests, and architecture | Original source map with links to Android Architecture Samples and Now in Android. Their LICENSE files were checked as Apache 2.0; upstream files are linked, not copied into this repo. |
+
 ## Public repositories checked for direct file reuse
 
 - public-apis/public-apis: referenced as a place to discover API providers. Its README/list was not copied into the DevKit guides.
-- No other public repository file is identified in the current guide contents as a direct source or copied input.
+- Android Architecture Samples and Now in Android were inspected for architecture, ViewModel, and test patterns. Their relevant files are linked in `upstream-solutions/README.md`; no upstream source file was copied into the DevKit in this pass.
 
 This is a content-level audit of the repository files and their visible references, not a forensic proof of every drafting step. Because the previous batch did not save exact source snapshots, URLs, commit SHAs, or line ranges at the time each paragraph was drafted, it would be inaccurate to claim that a specific line came from a specific external file.
+
+The examples added on 2026-10-18 are original compact teaching implementations informed by the reviewed official samples, not verbatim copies. Exact inspected upstream file URLs and the checked Apache-2.0 licensing status are documented in `upstream-solutions/README.md`.
 
 ## How to improve provenance for future additions
 
