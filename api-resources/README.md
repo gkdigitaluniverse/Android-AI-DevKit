@@ -1,14 +1,13 @@
 # API Resources
 
-This folder is for an API directory, integration patterns, and provider-specific notes.
+These guides help discover and integrate APIs without assuming every API is free or safe.
 
-Planned files:
-- api-directory.md — categorized API discovery sources and license/terms checks.
-- no-key-apis.md — APIs that currently document access without a key; re-check terms before use.
-- free-tier-apis.md — services with a documented free tier, including quotas and signup requirements.
-- android-api-integration.md — safe HTTP integration patterns.
-- api-error-handling.md — timeout, retry, parsing, and user-facing error guidance.
-- api-security.md — secret handling and transport security.
-- api-testing.md — mock responses and integration test notes.
+- [api-directory.md](api-directory.md) — discovery sources and provider-vetting checklist.
+- [no-key-apis.md](no-key-apis.md) — how to evaluate endpoints that may not require a key.
+- [free-tier-apis.md](free-tier-apis.md) — compare signup, quotas, billing, restrictions, and privacy.
+- [android-api-integration.md](android-api-integration.md) — layering, HTTP requirements, state handling, and dependency checks.
+- [api-error-handling.md](api-error-handling.md) — error categories, retry rules, and user experience.
+- [api-security.md](api-security.md) — credentials, transport security, permissions, and untrusted input.
+- [api-testing.md](api-testing.md) — unit/integration testing and manual verification.
 
-Important: a directory of public APIs is not a directory of guaranteed-free APIs or free API keys. Check current terms, quotas, authentication, privacy rules, and production suitability for each provider.
+**Important:** a public API directory is not a directory of guaranteed-free APIs or free API keys. Verify current provider terms, quotas, authentication, privacy rules, and production suitability. Never embed private credentials in an Android APK.
