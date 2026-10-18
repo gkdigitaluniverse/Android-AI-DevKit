@@ -93,7 +93,7 @@ fun ConfigurableVerticalGrid(
                 if (placedCounts[column] > 0) {
                     columnY[column] += verticalGap
                 }
-                val x = (column.toLong() * (itemWidth + horizontalGap))
+                val x = (column.toLong() * (itemWidth.toLong() + horizontalGap.toLong()))
                     .coerceAtMost(Int.MAX_VALUE.toLong())
                     .toInt()
                 placeable.placeRelative(x = x, y = columnY[column])
