@@ -7,6 +7,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 
 /**
  * A small UI renderer for ApiResult. Keep data loading in a ViewModel or
@@ -27,7 +28,7 @@ fun <T> LoadableContent(
             modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(
-                androidx.compose.ui.unit.dp(8)
+                8.dp
             )
         ) {
             Text(result.userMessage)
