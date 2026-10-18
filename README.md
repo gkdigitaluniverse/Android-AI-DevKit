@@ -22,7 +22,8 @@ Use these original checklists and templates to guide an AI coding assistant acro
 - [testing/api-verification-plan.md](testing/api-verification-plan.md) — API test matrix, execution order, and test-report template.
 - [templates/](templates/) — reusable AI coding task prompt.
 - [examples/](examples/) — practical Kotlin, Java, Compose, XML, and unit-test reference snippets.
-- [upstream-solutions/README.md](upstream-solutions/README.md) — verified map to relevant official Android sample files and license notes.
+- [upstream-solutions/README.md](upstream-solutions/README.md) — upstream source map and license notes.
+- [upstream-solutions/DEPENDENCY_SETUP.md](upstream-solutions/DEPENDENCY_SETUP.md) — dependency and integration requirements for imported/reference components.
 - [LICENSES-AND-ATTRIBUTION.md](LICENSES-AND-ATTRIBUTION.md) — third-party material policy.
 - [SOURCE_AUDIT.md](SOURCE_AUDIT.md) — file-by-file content provenance, source links, and direct-copy status.
 - [QUALITY_REVIEW.md](QUALITY_REVIEW.md) — Android-wide documentation/safety review, fixes made, and verification limits.
