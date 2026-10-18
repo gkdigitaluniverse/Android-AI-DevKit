@@ -1,6 +1,6 @@
 # Practical Android Code Examples
 
-These examples are small reference snippets for AI-assisted Android development. They are **not a complete Android project** and do not install dependencies or configure Gradle automatically.
+These examples are small reference snippets for AI-assisted Android development. They are **not a complete Android project** and do not install dependencies or configure Gradle automatically. `ScreenStateViewModel.kt` uses Kotlin `data object` syntax (Kotlin 1.9+); use a compatible `object` declaration on older Kotlin versions.
 
 ## Examples
 
