@@ -1,34 +1,34 @@
 # Android-AI-DevKit
 
-A reusable, maintainable reference toolkit for building and improving Android apps with AI assistance. It covers Kotlin, Java, XML layouts, Jetpack Compose, architecture, API integration, security, accessibility, and testing.
+A reusable reference toolkit for building and improving Android apps with AI assistance. It covers Kotlin, Java, XML layouts, Jetpack Compose, architecture, API integration, security, accessibility, and testing.
 
 ## Purpose
 
-Use these original checklists and templates to guide an AI coding assistant across new and existing Android projects. This repository is a reference toolkit, not an Android app or a guarantee that generated code will compile without project-specific verification.
+Use these original checklists and templates to guide an AI coding assistant across new and existing Android projects. This is a reference toolkit, not an Android app or a guarantee that generated code will compile without project-specific verification.
 
 ## Repository map
 
-- AI_INSTRUCTIONS.md — workflow and quality requirements for AI-assisted changes.
-- design-system/ — design tokens and visual consistency.
-- ui-components/ — reusable UI guidance.
-- kotlin-rules/ and java-rules/ — language-specific conventions.
-- xml-layouts/ — XML/View guidance.
-- architecture/ — separation of concerns and app structure.
-- logic-rules/ — business logic and edge cases.
-- api-resources/ — API discovery and safe integration.
-- security/ — client-side security and secret handling.
-- accessibility/ — accessible Android UI.
-- testing/ — unit, UI, and integration testing.
-- templates/ — reusable starter patterns.
-- LICENSES-AND-ATTRIBUTION.md — attribution and third-party material policy.
+- [AI_INSTRUCTIONS.md](AI_INSTRUCTIONS.md) — required workflow for AI-assisted changes.
+- [design-system/](design-system/) — reusable visual-system guidance.
+- [ui-components/](ui-components/) — Compose patterns and component guidance.
+- [kotlin-rules/](kotlin-rules/) and [java-rules/](java-rules/) — language-specific style and safety.
+- [xml-layouts/](xml-layouts/) — XML/View patterns.
+- [architecture/](architecture/) — project inspection and architecture review checklist.
+- [logic-rules/](logic-rules/) — business logic and edge cases.
+- [api-resources/](api-resources/) — API discovery, integration, security, errors, and testing.
+- [security/](security/) — Android security checklist.
+- [accessibility/](accessibility/) — accessibility checks.
+- [testing/](testing/) — build and verification checklist.
+- [templates/](templates/) — reusable AI coding task prompt.
+- [LICENSES-AND-ATTRIBUTION.md](LICENSES-AND-ATTRIBUTION.md) — third-party material policy.
 
 ## How to use
 
 1. Give your coding AI the project source and ask it to read AI_INSTRUCTIONS.md first.
 2. Ask it to inspect the existing stack and files before proposing changes.
-3. Point it to the relevant folders for the task.
-4. Ask it to preserve existing behavior, explain dependencies and permissions, and run available tests.
-5. Review generated changes and test them on a real device or emulator.
+3. Point it to the relevant guides for the task.
+4. Ask it to preserve existing behavior, explain dependency/manifest changes, and run available tests.
+5. Review generated changes and test on a real device or emulator.
 
 ## Principles
 
@@ -37,6 +37,7 @@ Use these original checklists and templates to guide an AI coding assistant acro
 - Never put private API credentials in an Android APK.
 - Verify licenses before adapting third-party code.
 - Be transparent about assumptions and tests not run.
+- A written rule does not automatically install a dependency or configure a service.
 
 ## Official references
 
@@ -44,5 +45,6 @@ Use these original checklists and templates to guide an AI coding assistant acro
 - Android architecture: https://developer.android.com/topic/architecture
 - Kotlin conventions: https://kotlinlang.org/docs/coding-conventions.html
 - Android security: https://developer.android.com/privacy-and-security/security-tips
+- Public API discovery list: https://github.com/public-apis/public-apis
 
 See LICENSES-AND-ATTRIBUTION.md before adding external code.
