@@ -25,6 +25,7 @@ Use these original checklists and templates to guide an AI coding assistant acro
 - [LICENSES-AND-ATTRIBUTION.md](LICENSES-AND-ATTRIBUTION.md) — third-party material policy.
 - [SOURCE_AUDIT.md](SOURCE_AUDIT.md) — file-by-file content provenance, source links, and direct-copy status.
 - [QUALITY_REVIEW.md](QUALITY_REVIEW.md) — Android-wide documentation/safety review, fixes made, and verification limits.
+- [GITHUB-ACCESS-AND-SOURCE-REVIEW.md](GITHUB-ACCESS-AND-SOURCE-REVIEW.md) — connected GitHub read/write capability check and official Android sample source review.
 
 ## How to use
 
