@@ -14,6 +14,9 @@ Free-tier terms change frequently. Verify current official documentation before 
 | Privacy | Data sent, stored, shared, and retained |
 | Exit plan | Can the provider be replaced or data cached safely? |
 
+## Example with documented restrictions
+Use [verified-api-candidates.md](verified-api-candidates.md) as a starting snapshot, not a permanent guarantee. It records Open-Meteo public free access as non-commercial with a published daily limit and no uptime guarantee, GitHub public unauthenticated access as rate-limited, and JSONPlaceholder as mock/testing only. Check the linked official sources again before release; no live smoke test is claimed by that catalogue.
+
 ## Integration rules
 - Plan quota limits and provider-failure handling before implementation.
 - Never assume a free tier is permanent.
