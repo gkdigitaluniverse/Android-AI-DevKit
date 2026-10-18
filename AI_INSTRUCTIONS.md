@@ -29,6 +29,7 @@ Use this repository as a project checklist and reference, not as a substitute fo
 - Accessibility: accessibility/accessibility-checklist.md
 - Build and verification: testing/android-verification-checklist.md
 - Reusable task prompt: templates/ai-task-template.md
+- Practical code references: examples/README.md (adapt to the target app; do not assume dependencies are installed).
 
 ## Output expectations
 
