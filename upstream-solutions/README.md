@@ -42,3 +42,8 @@ The new Java, Kotlin, Compose, and XML files in examples/ are original, compact 
 2. Check the exact license and any NOTICE file before redistributing source. Apache-2.0 redistribution requires retaining notices and including the license; modified files need a modification notice.
 3. Keep the target app's existing stack unless there is a reason to migrate.
 4. Run the target project's build and tests. A reference file being present here does not mean it has been compiled in your app.
+
+
+## Source files vendored into this repository
+
+- **Compose Samples — `VerticalGrid`:** actual upstream Kotlin source is now stored at [`upstream-solutions/compose-samples/Jetsnack/Grid.kt`](compose-samples/Jetsnack/Grid.kt). The original license header is preserved, the complete upstream Apache-2.0 license is at [`upstream-solutions/compose-samples/LICENSE`](compose-samples/LICENSE), and exact revision/dependency notes are in [the component README](compose-samples/README.md). This file has not yet been compiled in a target Android project.
