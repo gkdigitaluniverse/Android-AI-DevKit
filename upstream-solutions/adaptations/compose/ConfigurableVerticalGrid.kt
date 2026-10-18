@@ -25,7 +25,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.roundToPx
 
 /**
  * Arranges composable children into equal-width vertical columns.
@@ -58,7 +57,8 @@ fun ConfigurableVerticalGrid(
         val totalGaps = (horizontalGap.toLong() * (columns - 1))
             .coerceAtMost(Int.MAX_VALUE.toLong())
             .toInt()
-        val availableWidth = (constraints.maxWidth - totalGaps).coerceAtLeast(0)
+        val layoutWidth = if (constraints.hasBoundedWidth) constraints.maxWidth else constraints.minWidth
+        val availableWidth = (layoutWidth - totalGaps).coerceAtLeast(0)
         val itemWidth = availableWidth / columns
         val itemConstraints = constraints.copy(
             minWidth = itemWidth,
@@ -82,7 +82,7 @@ fun ConfigurableVerticalGrid(
             .coerceIn(constraints.minHeight, constraints.maxHeight)
 
         layout(
-            width = constraints.maxWidth,
+            width = layoutWidth,
             height = contentHeight,
         ) {
             val columnY = IntArray(columns)
