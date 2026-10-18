@@ -21,6 +21,7 @@ This permission does not require a runtime permission prompt.
 This example uses Android's `org.json.JSONObject` and `HttpURLConnection`. It assumes the project already includes a compatible kotlinx-coroutines dependency. Do not add duplicate dependencies without checking the project's version catalog/build files.
 
 ```kotlin
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
@@ -89,6 +90,8 @@ viewModelScope.launch {
     try {
         val result = fetchCurrentTemperature()
         // Publish result to the existing UI state.
+    } catch (cancelled: CancellationException) {
+        throw cancelled // Cancellation is control flow, not a user-facing failure.
     } catch (exception: Exception) {
         // Publish a user-readable error state.
         // Do not show raw stack traces or log secrets/sensitive response data.
@@ -102,7 +105,8 @@ Required imports for that fragment depend on the existing ViewModel implementati
 
 - Keep the request in a repository/data layer instead of placing networking logic in a Composable.
 - Represent loading, success, empty, offline, and error states explicitly.
-- Add cancellation-aware handling and a bounded response-body strategy for untrusted or potentially large responses.
+- The sample uses `readText()`, which reads the whole response into memory. It is intentionally minimal, **not production-ready** for untrusted or potentially large responses; enforce a response-size limit before shipping.
+- Preserve coroutine cancellation: catch and rethrow `CancellationException` before any broader `Exception` handler.
 - Consider an established HTTP client (for example, OkHttp/Retrofit) for production apps; first inspect the project's current dependencies.
 - Respect the provider's published non-commercial restriction, quotas, privacy policy, and uptime expectations.
 - Never embed private API credentials in an APK. Put secrets behind a backend.
