@@ -38,6 +38,15 @@ The public repository public-apis/public-apis is linked as a discovery directory
 | design-system/design-system-rules.md | Design tokens, consistency, Material 3 guidance | Original design-system checklist. Reference: https://m3.material.io/ and https://developer.android.com/develop/ui/compose/designsystems/material3. |
 | logic-rules/business-logic-rules.md | Business rules, validation, edge cases, state and testability | Original checklist informed by general Android architecture guidance: https://developer.android.com/topic/architecture. It contains no domain-specific dataset. |
 
+| `api-resources/verified-api-candidates.md` | Dated API candidate examples, terms/limits, and exclusions | New documentation snapshot summarizing linked official provider docs; no live endpoint test was performed. Verify current provider terms again before integration. |
+| `api-resources/examples/kotlin-http-example.md` | Minimal Kotlin HTTPS request example using Open-Meteo | Original illustrative example written for this toolkit and linked to official Open-Meteo, Android networking, and Kotlin coroutine documentation. It is not a complete production client; response-size limits and project-specific integration remain necessary. |
+| `testing/api-verification-plan.md` | API integration test matrix and honest test-report template | Original verification plan. It lists tests to run; it is not evidence that the tests were executed. |
+| `examples/README.md` | Index and safe-use notes for local code snippets | Original index for this repository's own snippets. |
+| `examples/kotlin/ApiResult.kt` | Minimal result-state type | Original illustrative snippet; not copied from a third-party repository. |
+| `examples/kotlin/SafeRepositoryCall.kt` | Transport error mapping while rethrowing coroutine cancellation | Original illustrative snippet; not a drop-in replacement for provider-specific error handling. |
+| `examples/compose/LoadableContent.kt` | Compose renderer for loading/result states | Original illustrative snippet. Requires the target project to use compatible Compose and Material 3 dependencies. |
+| `examples/testing/ApiResultTest.kt` | Unit tests for result-state mapping | Original illustrative test snippet; it has not been compiled or run as part of an Android project in this repository. |
+
 ## Public repositories checked for direct file reuse
 
 - public-apis/public-apis: referenced as a place to discover API providers. Its README/list was not copied into the DevKit guides.
