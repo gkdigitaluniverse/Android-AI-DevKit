@@ -24,6 +24,7 @@ Use these original checklists and templates to guide an AI coding assistant acro
 - [examples/](examples/) — practical Kotlin, Compose, and unit-test reference snippets.
 - [LICENSES-AND-ATTRIBUTION.md](LICENSES-AND-ATTRIBUTION.md) — third-party material policy.
 - [SOURCE_AUDIT.md](SOURCE_AUDIT.md) — file-by-file content provenance, source links, and direct-copy status.
+- [QUALITY_REVIEW.md](QUALITY_REVIEW.md) — Android-wide documentation/safety review, fixes made, and verification limits.
 
 ## How to use
 
