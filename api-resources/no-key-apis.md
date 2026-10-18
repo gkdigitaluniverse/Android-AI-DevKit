@@ -2,6 +2,9 @@
 
 Authentication rules change. This is an evaluation checklist, not a promise that any endpoint will remain unauthenticated or free. Verify official provider documentation immediately before integration.
 
+## Concrete starting points
+See [verified-api-candidates.md](verified-api-candidates.md) for a dated, source-linked snapshot distinguishing Open-Meteo (non-commercial free API), GitHub public metadata (rate-limited), and JSONPlaceholder (mock/testing only). The catalogue records that live endpoint and Android integration tests have not been run. REST Countries is explicitly excluded as a guaranteed no-key API because its current docs require an API key.
+
 ## Candidate categories to investigate
 - Public datasets and open-data portals
 - Public holidays and calendar data
