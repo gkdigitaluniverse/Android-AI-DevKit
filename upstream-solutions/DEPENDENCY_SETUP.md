@@ -8,6 +8,7 @@ This guide describes the dependencies implied by the source files currently pres
 
 - There is no root `settings.gradle(.kts)`, root `build.gradle(.kts)`, Gradle wrapper, or Android app module in this repository.
 - The vendored Compose `VerticalGrid` source is a low-coupling upstream component; a separate configurable adaptation is also available.
+- The vendored Jetsnack button and surface sources depend on the Jetsnack theme tokens and require further adaptation/theme integration before they can compile in another app.
 - Architecture Samples `TasksViewModel.kt` and `TasksViewModelTest.kt` are reference files with substantial unresolved app-specific dependencies; they are not a ready-to-build module.
 - No build, unit test, lint, APK, or device verification has been performed in this repository.
 
@@ -15,10 +16,12 @@ This guide describes the dependencies implied by the source files currently pres
 
 | Component | Direct source dependencies | Additional consuming-project requirements | Status |
 |---|---|---|---|
-| [Jetsnack `Grid.kt`](compose-samples/Jetsnack/Grid.kt) | `androidx.compose.runtime.Composable`, `androidx.compose.ui.Modifier`, `androidx.compose.ui.layout.Layout` | Compatible Compose Runtime and UI artifacts; Kotlin/Compose compiler configuration compatible with the app | Original source; not compiled here |
+| [Jetsnack `Grid.kt`](compose-samples/Jetsnack/Grid.kt) | Compose Runtime `Composable`, Compose UI `Modifier` and `Layout` | Compatible Compose Runtime/UI artifacts; Kotlin/Compose compiler configuration compatible with the app | Original source; not compiled here |
 | [`ConfigurableVerticalGrid.kt`](adaptations/compose/ConfigurableVerticalGrid.kt) | Same Compose Runtime/UI APIs plus `Dp` and `roundToPx` from Compose UI | Same Compose setup; bounded parent width recommended | Adapted source; not compiled here |
+| [`JetsnackSurface.kt`](compose-samples/Jetsnack/JetsnackSurface.kt) | Compose Foundation, Runtime, UI graphics/layout, Material 3, Kotlin math | Requires compatible Compose setup and `com.example.jetsnack.ui.theme.JetsnackTheme` with expected color tokens | Upstream reference; not compiled here |
+| [`JetsnackButton.kt`](compose-samples/Jetsnack/JetsnackButton.kt) | Compose Foundation, Runtime, UI, Material 3, Preview APIs | Requires `JetsnackSurface`, `JetsnackTheme` and expected theme color tokens; Material 3 ripple/preview API compatibility must be checked | Upstream reference; not compiled here |
 | Architecture Samples `TasksViewModel.kt` | AndroidX Lifecycle ViewModel/SavedStateHandle/viewModelScope; Kotlin Coroutines/Flow; Hilt annotations; `javax.inject.Inject` | Task model/repository, filter types, Async/result types, subscription helper, result constants, Android string resources, Hilt setup/bindings, and repository-specific navigation/state assumptions | Reference only |
-| Architecture Samples `TasksViewModelTest.kt` | AndroidX Lifecycle SavedStateHandle; Kotlin Coroutines Test; JUnit; Google Truth | FakeTaskRepository, Task model, MainCoroutineRule, app result constants/resources, plus production ViewModel's full support graph | Not independently runnable |
+| Architecture Samples `TasksViewModelTest.kt` | AndroidX Lifecycle SavedStateHandle; Kotlin Coroutines Test; JUnit; Google Truth | FakeTaskRepository, MainCoroutineRule, Task model, app result constants/resources, plus production ViewModel's full support graph | Not independently runnable |
 
 ## Compose VerticalGrid — integration checklist
 
@@ -39,6 +42,14 @@ ConfigurableVerticalGrid(columns = 2, horizontalSpacing = 8.dp, verticalSpacing 
 ```
 
 This is an integration example, not a runnable standalone project. Import `androidx.compose.ui.unit.dp` for the spacing arguments.
+
+## Jetsnack button and surface — integration checklist
+
+1. Read [`UI_DESIGN_SOLUTIONS.md`](UI_DESIGN_SOLUTIONS.md) before reuse.
+2. Keep both `JetsnackButton.kt` and `JetsnackSurface.kt together if using the upstream implementation unchanged.
+3. Either provide compatible `JetsnackTheme.colors` tokens or adapt the source to the target app's own theme and record the modifications. Do not import the entire Jetsnack theme unless the target project genuinely needs it.
+4. Check Material 3 and Compose versions for APIs used by the source, including `ripple()` and preview annotations.
+5. Verify enabled/disabled visuals, contrast, touch target, ripple behavior, large font, dark theme, RTL, and accessibility in the actual app.
 
 ## TasksViewModel — dependencies to resolve before reuse
 
@@ -67,7 +78,7 @@ Do not simply add dependencies until Gradle resolves: unresolved project classes
 
 ## License and provenance
 
-See [LICENSES-AND-ATTRIBUTION.md](../LICENSES-AND-ATTRIBUTION.md), [the Compose component notes](compose-samples/README.md), and [the license review](LICENSE_REVIEW.md). Preserve upstream notices and document modifications whenever code is adapted.
+See [LICENSES-AND-ATTRIBUTION.md](../LICENSES-AND-ATTRIBUTION.md), [the Compose component notes](compose-samples/README.md), [the UI design catalogue](UI_DESIGN_SOLUTIONS.md), and [the license review](LICENSE_REVIEW.md). Preserve upstream notices and document modifications whenever code is adapted.
 
 ## Verification record
 

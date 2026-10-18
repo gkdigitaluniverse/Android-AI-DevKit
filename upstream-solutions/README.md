@@ -43,17 +43,17 @@ The new Java, Kotlin, Compose, and XML files in examples/ are original, compact 
 3. Keep the target app's existing stack unless there is a reason to migrate.
 4. Run the target project's build and tests. A reference file being present here does not mean it has been compiled in your app.
 
-
 ## Source files vendored into this repository
 
-- **Compose Samples — `VerticalGrid`:** actual upstream Kotlin source is now stored at [`upstream-solutions/compose-samples/Jetsnack/Grid.kt`](compose-samples/Jetsnack/Grid.kt). The original license header is preserved, the complete upstream Apache-2.0 license is at [`upstream-solutions/compose-samples/LICENSE`](compose-samples/LICENSE), and exact revision/dependency notes are in [the component README](compose-samples/README.md). This file has not yet been compiled in a target Android project.
+- **Compose Samples — `VerticalGrid`:** actual upstream Kotlin source is stored at [`compose-samples/Jetsnack/Grid.kt`](compose-samples/Jetsnack/Grid.kt). The original license header is preserved, the complete upstream Apache-2.0 license is at [`compose-samples/LICENSE`](compose-samples/LICENSE), and exact revision/dependency notes are in [the component README](compose-samples/README.md). This file has not yet been compiled in a target Android project.
+- **Compose Samples — `JetsnackSurface`:** actual upstream source is stored at [`compose-samples/Jetsnack/JetsnackSurface.kt`](compose-samples/Jetsnack/JetsnackSurface.kt).
+- **Compose Samples — `JetsnackButton`:** actual upstream source is stored at [`compose-samples/Jetsnack/JetsnackButton.kt`](compose-samples/Jetsnack/JetsnackButton.kt). Both files preserve the upstream headers and are pinned to the same revision. They depend on the Jetsnack theme and are not drop-in components without that theme.
+- **ConfigurableVerticalGrid:** [adapted Kotlin source](adaptations/compose/ConfigurableVerticalGrid.kt) adds spacing and input validation while retaining the original source unchanged.
 
+## UI and design catalogue
+
+See [UI_DESIGN_SOLUTIONS.md](UI_DESIGN_SOLUTIONS.md) for the component use cases, dependency cautions, design practices, provenance, and verification status.
 
 ## Dependency and setup guide
 
-See [DEPENDENCY_SETUP.md](DEPENDENCY_SETUP.md) for direct imports, target-project requirements, integration cautions, and what has or has not been verified. Exact dependency versions are intentionally not pinned until there is a consuming Android Gradle project to match.
-
-
-## Adapted component for app reuse
-
-- **ConfigurableVerticalGrid:** [adapted Kotlin source](adaptations/compose/ConfigurableVerticalGrid.kt) adds horizontal/vertical spacing and validates positive column count/non-negative spacing. The original, unmodified upstream file remains available at [Jetsnack/Grid.kt](compose-samples/Jetsnack/Grid.kt). See the [adaptation README](adaptations/compose/README.md) for differences and limitations. Neither file has been compiled in this repository.
+See [DEPENDENCY_SETUP.md](DEPENDENCY_SETUP.md) for direct imports, target-project requirements, integration cautions, and what has or has not been verified. Exact dependency versions are intentionally not pinned until there is a consuming Android Gradle project.
