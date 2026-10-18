@@ -47,3 +47,8 @@ The new Java, Kotlin, Compose, and XML files in examples/ are original, compact 
 ## Source files vendored into this repository
 
 - **Compose Samples — `VerticalGrid`:** actual upstream Kotlin source is now stored at [`upstream-solutions/compose-samples/Jetsnack/Grid.kt`](compose-samples/Jetsnack/Grid.kt). The original license header is preserved, the complete upstream Apache-2.0 license is at [`upstream-solutions/compose-samples/LICENSE`](compose-samples/LICENSE), and exact revision/dependency notes are in [the component README](compose-samples/README.md). This file has not yet been compiled in a target Android project.
+
+
+## Dependency and setup guide
+
+See [DEPENDENCY_SETUP.md](DEPENDENCY_SETUP.md) for direct imports, target-project requirements, integration cautions, and what has or has not been verified. Exact dependency versions are intentionally not pinned until there is a consuming Android Gradle project to match.
