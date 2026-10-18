@@ -3,6 +3,7 @@
 These guides help discover and integrate APIs without assuming every API is free or safe.
 
 - [api-directory.md](api-directory.md) — discovery sources and provider-vetting checklist.
+- [verified-api-candidates.md](verified-api-candidates.md) — dated, source-linked examples with authentication, limits, and intended-use warnings.
 - [no-key-apis.md](no-key-apis.md) — how to evaluate endpoints that may not require a key.
 - [free-tier-apis.md](free-tier-apis.md) — compare signup, quotas, billing, restrictions, and privacy.
 - [android-api-integration.md](android-api-integration.md) — layering, HTTP requirements, state handling, and dependency checks.
