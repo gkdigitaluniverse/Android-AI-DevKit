@@ -11,14 +11,20 @@ Before adding material from an external repository or website:
 
 References are not endorsements. Third-party names and trademarks belong to their respective owners.
 
-
 ## Vendored source files
 
-### Android Compose Samples — VerticalGrid
+### Android Compose Samples — original VerticalGrid
 - Source file: `upstream-solutions/compose-samples/Jetsnack/Grid.kt`
 - Upstream repository: https://github.com/android/compose-samples
 - Exact upstream revision: `5f2f2cf1fdfdb6472dd46deb8bcd35cbc9024632`
 - Exact upstream path: `Jetsnack/app/src/main/java/com/example/jetsnack/ui/components/Grid.kt`
 - License: Apache License 2.0; the complete upstream license is retained at `upstream-solutions/compose-samples/LICENSE`.
-- Copyright header preserved in source; no code changes were made during import.
+- Copyright header preserved; no code changes were made during import.
 - Provenance and integration notes: `upstream-solutions/compose-samples/README.md`.
+
+### Android Compose Samples — ConfigurableVerticalGrid adaptation
+- Adapted source file: `upstream-solutions/adaptations/compose/ConfigurableVerticalGrid.kt`
+- Derived from the same Apache-2.0-licensed upstream file and pinned revision listed above.
+- Adds configurable horizontal/vertical spacing and validates columns/spacing inputs; original upstream file remains unchanged alongside it.
+- The adaptation includes its own copyright/license header and explicitly records the upstream source and adaptation.
+- Integration and verification notes: `upstream-solutions/adaptations/compose/README.md`.

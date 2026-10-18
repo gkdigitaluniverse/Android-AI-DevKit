@@ -7,7 +7,7 @@ This guide describes the dependencies implied by the source files currently pres
 ## Current status
 
 - There is no root `settings.gradle(.kts)`, root `build.gradle(.kts)`, Gradle wrapper, or Android app module in this repository.
-- The vendored Compose `VerticalGrid` source is the first low-coupling, actual upstream component added.
+- The vendored Compose `VerticalGrid` source is a low-coupling upstream component; a separate configurable adaptation is also available.
 - Architecture Samples `TasksViewModel.kt` and `TasksViewModelTest.kt` are reference files with substantial unresolved app-specific dependencies; they are not a ready-to-build module.
 - No build, unit test, lint, APK, or device verification has been performed in this repository.
 
@@ -15,7 +15,8 @@ This guide describes the dependencies implied by the source files currently pres
 
 | Component | Direct source dependencies | Additional consuming-project requirements | Status |
 |---|---|---|---|
-| [Jetsnack `Grid.kt`](compose-samples/Jetsnack/Grid.kt) | `androidx.compose.runtime.Composable`, `androidx.compose.ui.Modifier`, `androidx.compose.ui.layout.Layout` | Compatible Compose Runtime and UI artifacts; Kotlin/Compose compiler configuration compatible with the app | Low coupling; not compiled here |
+| [Jetsnack `Grid.kt`](compose-samples/Jetsnack/Grid.kt) | `androidx.compose.runtime.Composable`, `androidx.compose.ui.Modifier`, `androidx.compose.ui.layout.Layout` | Compatible Compose Runtime and UI artifacts; Kotlin/Compose compiler configuration compatible with the app | Original source; not compiled here |
+| [`ConfigurableVerticalGrid.kt`](adaptations/compose/ConfigurableVerticalGrid.kt) | Same Compose Runtime/UI APIs plus `Dp` and `roundToPx` from Compose UI | Same Compose setup; bounded parent width recommended | Adapted source; not compiled here |
 | Architecture Samples `TasksViewModel.kt` | AndroidX Lifecycle ViewModel/SavedStateHandle/viewModelScope; Kotlin Coroutines/Flow; Hilt annotations; `javax.inject.Inject` | Task model/repository, filter types, Async/result types, subscription helper, result constants, Android string resources, Hilt setup/bindings, and repository-specific navigation/state assumptions | Reference only |
 | Architecture Samples `TasksViewModelTest.kt` | AndroidX Lifecycle SavedStateHandle; Kotlin Coroutines Test; JUnit; Google Truth | FakeTaskRepository, Task model, MainCoroutineRule, app result constants/resources, plus production ViewModel's full support graph | Not independently runnable |
 
@@ -25,19 +26,19 @@ This guide describes the dependencies implied by the source files currently pres
 2. Ensure the module includes Compose Runtime and Compose UI artifacts using versions compatible with its Kotlin/Compose compiler setup. Do not copy arbitrary versions from another sample into an existing app.
 3. Copy `Grid.kt` into a package appropriate for the target app. If changing the package, record that as a modification and retain the copyright/license header.
 4. Import `VerticalGrid` from its chosen package and provide a finite, useful width constraint from the parent layout.
-5. Pass a positive `columns` count. The upstream implementation does not guard against zero or negative values.
+5. For upstream `Grid.kt`, pass a positive `columns` count; it does not validate this. Alternatively, use `ConfigurableVerticalGrid.kt`, which validates positive columns and non-negative spacing.
 6. Test narrow widths, children of different heights, accessibility/semantics, and scrolling in the actual screen. The component itself does not create a scroll container.
 7. Run the target app's normal Gradle compile, lint, and relevant UI tests. Record the exact app commit and results; do not infer compilation from the source being present.
 
 Minimal usage shape (illustrative; requires Compose in the consuming project):
 
 ```kotlin
-VerticalGrid(columns = 2) {
+ConfigurableVerticalGrid(columns = 2, horizontalSpacing = 8.dp, verticalSpacing = 8.dp) {
     // Place composable children here.
 }
 ```
 
-This is an integration example, not a runnable standalone project.
+This is an integration example, not a runnable standalone project. Import `androidx.compose.ui.unit.dp` for the spacing arguments.
 
 ## TasksViewModel — dependencies to resolve before reuse
 
@@ -53,7 +54,7 @@ For its test, additionally provide:
 - `MainCoroutineRule`
 - compatible test dependencies for JUnit, Truth, and `kotlinx-coroutines-test`
 
-Do not simply add dependencies until Gradle resolves: unresolved project classes/resources are architectural requirements, not Maven dependencies. Prefer a small self-contained adaptation only in a later step, with changes explicitly documented and the upstream version retained as provenance.
+Do not simply add dependencies until Gradle resolves: unresolved project classes/resources are architectural requirements, not Maven dependencies. Prefer small self-contained adaptations with changes explicitly documented and the upstream version retained as provenance.
 
 ## Version-selection policy
 
