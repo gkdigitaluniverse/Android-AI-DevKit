@@ -5,7 +5,7 @@ Repository: https://github.com/gkdigitaluniverse/Android-AI-DevKit
 
 ## Summary
 
-The guides in this repository are written as original checklists, explanations, and workflow templates. In the files reviewed for this audit, I did not identify a third-party repository file copied verbatim or a code sample transplanted from another repository. No external repository's full file was imported.
+The guides and compact examples in this repository are original checklists, explanations, templates, and teaching snippets. Exception: two files from Android Architecture Samples are intentionally included verbatim as reference-only source under `upstream-solutions/architecture-samples/`, alongside the upstream Apache-2.0 LICENSE. Their original copyright/license headers are retained. No full third-party application or repository was imported.
 
 Important distinction: the previous content-writing pass did not maintain a sentence-by-sentence research log or record a source URL beside every rule. Therefore, this document records the sources that support the subject matter and identifies where a file is an original synthesis; it does not claim that every sentence was individually verified against each link on the audit date.
 
