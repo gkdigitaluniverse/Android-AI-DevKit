@@ -1,6 +1,5 @@
 package example.android;
 
-import java.io.IOException;
 import java.util.Objects;
 
 /**
