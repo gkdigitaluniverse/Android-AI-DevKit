@@ -51,7 +51,7 @@ The public repository public-apis/public-apis is linked as a discovery directory
 | `examples/compose/ScreenStateContent.kt` | Compose renderer for loading, content, empty, and error states | Original compact example; requires compatible Compose and Material 3 dependencies in the target app. Not compiled in this repo. |
 | `examples/xml/accessible-form-example.xml` | XML Views form with label association, email autofill/input type, and minimum touch heights | Original example; sample string resources must be supplied by the target app. Not layout-inflated or accessibility-tested here. |
 | `examples/java/RepositoryBoundary.java` | Java repository boundary and explicit result category example | Original illustrative snippet. Not compiled in a target Android project. |
-| `upstream-solutions/README.md` | Map of official Android sample files for ViewModel, repository, Compose UI tests, and architecture | Original source map with links to Android Architecture Samples and Now in Android. Their LICENSE files were checked as Apache 2.0; upstream files are linked, not copied into this repo. |
+| `upstream-solutions/README.md` | Map of official Android sample files for ViewModel, repository, Compose UI tests, and architecture | Original source map with links to Android Architecture Samples and Now in Android. It documents two verbatim Apache-2.0 source copies and the included upstream license. |
 
 ## Public repositories checked for direct file reuse
 
